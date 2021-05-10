@@ -36,3 +36,8 @@
         width: 100% !important;
     }
 }
+
+.navbar-logo {
+    margin-right: 10px;
+    width: 25px;
+}
