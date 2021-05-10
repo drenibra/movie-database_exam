@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap-slate.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">The Movie Database™</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2 class="text-center">Search For Any Movie</h2>
+            <form class="form-group" id="searchForm">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="searchText" placeholder="Search Movie...">
+                    </div>
+                    <div class="col-lg-3">
+                        <button class="btn btn-primary w-100" value="submit">Submit</button>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-lg-3">
+                        <label class="h5" for="type">Type</label>
+                        <select class="form-control" name="type" id="type">
+                            <option default disabled value="none" selected="selected">Select Type</option>
+                            <option value="movie">Movie</option>
+                            <option value="series">Series</option>
+                            <option value="episode">Episode</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <label class="h5" for="year">Year of release</label>
+                        <input type="text" name="year" id="year" placeholder="Year of release" class="form-control">
+                    </div>
+                    <div class="col-lg-3">
+                        <label class="h5" for="genre">Genre</label>
+                        <input type="text" name="genre" id="genre" placeholder="Genre" class="form-control">
+                    </div>
+                    <div class="col-lg-3">
+                        <label class="h5" for="ratings">Ratings</label>
+                        <input type="text" name="ratings" id="ratings" placeholder="Ratings" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="movies" class="row g-1">
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

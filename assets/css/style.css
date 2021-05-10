@@ -1,0 +1,38 @@
+.card-img-top {   
+    height: 380px;
+    object-fit: cover;
+}
+
+.card-title {
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+}
+
+@media (min-width: 1200px) {
+    .card-img-top {
+        height: 400px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1999px) {
+    .card-img-top {   
+        height: 309px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 575px) {
+    .card-img-top {
+        height: unset;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-control {
+        margin: 10px 0 !important;
+        width: 100% !important;
+    }
+}

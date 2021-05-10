@@ -1,0 +1,12 @@
+.col-lg-4 {
+    text-align: center;
+}
+
+@media (max-width: 678px) {
+    img {
+        width: 100%;
+    }
+    .col-lg-8 {
+        padding-top: 20px;
+    }
+}
