@@ -49,7 +49,7 @@ function getPopularMovies() {
         popularMovies.forEach((movie) => {
             let poster = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
             popularMoviesOutput += `
-                <div class="item">
+                <div class="item" loading="lazy">
                     <img src="${poster}" alt="${movie.original_title}-poster">
                 </div>
             `;
