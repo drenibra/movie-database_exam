@@ -46,17 +46,18 @@ function getPopularMovies() {
     axios.get(url)
     .then((response) => {
         let popularMovies = response.data.results;
-        console.log(popularMovies);
         popularMovies.forEach((movie) => {
             let poster = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
             popularMoviesOutput += `
-            <div class="item">
-                <img src="${poster}" alt="movie.original_title-poster">
-            </div>
+                <div class="item">
+                    <img src="${poster}" alt="${movie.original_title}-poster">
+                </div>
             `;
 
         })
-        $('#popularMoviesOutput').html(popularMoviesOutput)
+        $('#popularMoviesOutput').html(popularMoviesOutput);
+        var replace = $('#popularMoviesOutput').html().replace('undefined', '');
+        $('#popularMoviesOutput').html(replace);
         $('.owl-carousel').owlCarousel({
             loop:true,
             margin:10,
