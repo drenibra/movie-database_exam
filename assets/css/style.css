@@ -53,6 +53,10 @@
     object-fit: cover;
 }
 
+.owl-carousel {
+    min-height: 265px;
+}
+
 @media (max-width: 1199px) {
     .owl-item img {
         height: 265px;

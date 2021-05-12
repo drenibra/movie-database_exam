@@ -52,8 +52,8 @@ function getPopularMovies() {
             let poster = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
             if (count <= 20) {
                 popularMoviesOutput += `
-                <div class="item" loading="lazy">
-                <img src="${poster}" alt="${movie.original_title}-poster">
+                <div class="item">
+                <img src="${poster}" loading="lazy" alt="${movie.original_title}-poster">
                 </div>
                 `;
             }
