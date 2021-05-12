@@ -17,13 +17,13 @@ let output;
 let popularMoviesOutput;
 
 function getMovies(searchText, type, year, genre, ratings) {
-    var url = `http://www.omdbapi.com/?apikey=${apiKey}&y=${year}`;
+    var url = `https://www.omdbapi.com/?apikey=${apiKey}&y=${year}`;
     axios.get(`${url}&s=${searchText}&type=${type}`)
     .then((response) => {
         let movies = response.data.Search;
         output = '';
         $.each(movies, (index, movie) => {
-            var url = `http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`;
+            var url = `https://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`;
             axios.get(`${url}`)
                 .then((response) => {
                     let movie = response.data;
@@ -114,7 +114,7 @@ function movieSelected(id) {
 
 function getMovie() {
     let movieId  = sessionStorage.getItem('movieId');
-    var url = `http://www.omdbapi.com/?apikey=${apiKey}&i=${movieId}`;
+    var url = `https://www.omdbapi.com/?apikey=${apiKey}&i=${movieId}`;
     axios.get(`${url}`)
         .then((response) => {
             console.log(response);
@@ -144,7 +144,7 @@ function getMovie() {
                         <h3>Plot</h3>
                         <p>${movie.Plot}</p>
                         <hr>
-                        <a class="btn btn-primary" href="http://imdb.com/title/${movie.imdbID}" target="_blank">View IMDB</a>
+                        <a class="btn btn-primary" href="https://imdb.com/title/${movie.imdbID}" target="_blank">View IMDB</a>
                         <a class="btn btn-default" href="index.html">Go Back to Search</a>
                     </div>
                 </div>
