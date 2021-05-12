@@ -1,6 +1,6 @@
 $(document).ready(() => {
+    getPopularMovies();
     $('#searchForm').on('submit', (e) => {
-        console.log('test');
         let searchText = $('#searchText').val();
         let type = $('#type').val();
         let year = $('#year').val();
@@ -8,17 +8,18 @@ $(document).ready(() => {
         let ratings = $('#ratings').val();
         getMovies(searchText, type, year, genre, ratings);
         e.preventDefault();
-    });    
+    });
 });
 
-const apiKey = '66e34c42';
+const apiKey = '66e34c42',
+    popularMoviesApi = '4e4c856e030c60ca3dc206cecae8f96f';
 let output;
+let popularMoviesOutput;
 
 function getMovies(searchText, type, year, genre, ratings) {
     var url = `http://www.omdbapi.com/?apikey=${apiKey}&y=${year}`;
     axios.get(`${url}&s=${searchText}&type=${type}`)
     .then((response) => {
-        console.log(response);
         let movies = response.data.Search;
         output = '';
         $.each(movies, (index, movie) => {
@@ -40,11 +41,50 @@ function getMovies(searchText, type, year, genre, ratings) {
     })
 }
 
+function getPopularMovies() {
+    var url = `https://api.themoviedb.org/3/movie/popular?api_key=${popularMoviesApi}&language=en-US&page=1`;
+    axios.get(url)
+    .then((response) => {
+        let popularMovies = response.data.results;
+        console.log(popularMovies);
+        popularMovies.forEach((movie) => {
+            let poster = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+            popularMoviesOutput += `
+            <div class="item">
+                <img src="${poster}" alt="movie.original_title-poster">
+            </div>
+            `;
+
+        })
+        $('#popularMoviesOutput').html(popularMoviesOutput)
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            autoplay: true,
+            autoplayTimeout:4000,
+            lazyLoad: true,
+            autoplayHoverPause:false,
+            nav:true,
+            responsive:{
+                0:{
+                    items:2
+                },
+                767:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+    })
+}
+
 function renderOutput(poster, title, type, year, imdbID) {
     output += `
     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
         <div class="card mb-5">
-            <img class="card-img-top" src="${poster}" alt="${title}-Poster">
+            <a href="#" onclick="movieSelected('${imdbID}')"><img class="card-img-top" src="${poster}" alt="${title}-Poster"></a>
             <div class="card-body">
                 <h5 class="card-title">${title}</h5>
                 <div class="d-flex">

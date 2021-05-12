@@ -37,7 +37,36 @@
     }
 }
 
+
+
 .navbar-logo {
     margin-right: 10px;
     width: 25px;
+}
+
+.owl-nav, .owl-dots {
+    display: none;
+}
+
+.owl-item img {
+    height: 321px;
+    object-fit: cover;
+}
+
+@media (max-width: 1199px) {
+    .owl-item img {
+        height: 265px;
+    }
+}
+
+@media (max-width: 991px) {
+    .owl-item img {
+        height: 335px;
+    }
+}
+
+@media (max-width: 767) {
+    .owl-item img {
+        height: 365px;
+    }
 }

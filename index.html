@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap-slate.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,13 +15,17 @@
         <div class="container">
             <div class="navbar-header">
                 <a href="#" class="navbar-brand d-flex align-items-center">
-                    <img src="assets/images/film.svg" class="navbar-logo" alt="logo">
-                    The Movie Database™
-                </a>
+                <img src="assets/images/film.svg" class="navbar-logo" alt="logo">The Movie Database™</a>
             </div>
         </div>
     </nav>
-
+    <div class="container">
+        <div class="pt-4 text-center">
+            <h4>Popular Movies</h4>
+        </div>
+        <div class="owl-carousel mb-3 owl-theme" id="popularMoviesOutput">
+        </div>
+    </div> 
     <div class="container">
         <div class="jumbotron">
             <h2 class="text-center">Search For Any Movie</h2>
@@ -58,15 +64,13 @@
             </form>
         </div>
     </div>
-
     <div class="container">
         <div id="movies" class="row g-1">
-            
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
