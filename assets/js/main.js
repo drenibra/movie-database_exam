@@ -63,7 +63,7 @@ function getPopularMovies() {
             autoplay: true,
             autoplayTimeout:4000,
             lazyLoad: true,
-            autoplayHoverPause:false,
+            autoplayHoverPause:true,
             nav:true,
             responsive:{
                 0:{
