@@ -53,7 +53,7 @@ function getPopularMovies() {
             if (count <= 20) {
                 popularMoviesOutput += `
                 <div class="item">
-                <img src="${poster}" loading="lazy" alt="${movie.original_title}-poster">
+                    <img data-src="${poster}" class="owl-lazy" alt="${movie.original_title}-poster">
                 </div>
                 `;
             }
