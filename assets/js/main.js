@@ -45,14 +45,18 @@ function getPopularMovies() {
     var url = `https://api.themoviedb.org/3/movie/popular?api_key=${popularMoviesApi}&language=en-US&page=1`;
     axios.get(url)
     .then((response) => {
+        let count = 0;
         let popularMovies = response.data.results;
         popularMovies.forEach((movie) => {
+            count++;
             let poster = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
-            popularMoviesOutput += `
+            if (count <= 20) {
+                popularMoviesOutput += `
                 <div class="item" loading="lazy">
-                    <img src="${poster}" alt="${movie.original_title}-poster">
+                <img src="${poster}" alt="${movie.original_title}-poster">
                 </div>
-            `;
+                `;
+            }
 
         })
         $('#popularMoviesOutput').html(popularMoviesOutput);
